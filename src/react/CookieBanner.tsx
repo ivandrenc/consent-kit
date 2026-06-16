@@ -9,7 +9,7 @@ type Mode = "initial" | "customize";
 /**
  * The consent banner. Renders only while the decision is `pending`, so it is
  * safe to mount unconditionally at the root of your layout. Styling comes from
- * `consent-kit/styles.css` (import it once); override the `--ck-*` CSS
+ * `consentium/styles.css` (import it once); override the `--ck-*` CSS
  * variables to theme it.
  */
 export function CookieBanner() {

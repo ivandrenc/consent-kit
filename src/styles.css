@@ -1,4 +1,4 @@
-/* consent-kit styles — import once: `import "consent-kit/styles.css"`.
+/* consentium styles — import once: `import "consentium/styles.css"`.
  *
  * Theming: override any `--ck-*` custom property at a scope that wraps the
  * banner (e.g. `:root` or your app shell). The defaults below are a neutral,

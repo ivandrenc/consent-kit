@@ -2,7 +2,7 @@
 
 ## Supported versions
 
-consent-kit is pre-1.0. Security fixes land on the latest `0.x` release.
+consentium is pre-1.0. Security fixes land on the latest `0.x` release.
 
 | Version | Supported |
 | ------- | --------- |
@@ -24,7 +24,7 @@ release notes (unless you prefer to stay anonymous).
 
 ## Scope and threat model
 
-consent-kit runs entirely in the browser and stores a small JSON record in
+consentium runs entirely in the browser and stores a small JSON record in
 `localStorage`. It does not:
 
 - send data to any server, third party, or the maintainers;

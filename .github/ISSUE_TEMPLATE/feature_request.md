@@ -15,5 +15,5 @@ What you'd like to see. API sketch welcome.
 Other approaches you thought about.
 
 **Scope check**
-consent-kit aims to stay small and dependency-light. Does this fit that, or is
+consentium aims to stay small and dependency-light. Does this fit that, or is
 it better as a recipe/example?

@@ -1,7 +1,7 @@
 import type { ConsentCategory, ConsentConfig, ConsentRecord } from "./types";
 
 /** Custom DOM event dispatched on `window` whenever consent changes. */
-export const CONSENT_CHANGE_EVENT = "consent-kit:change";
+export const CONSENT_CHANGE_EVENT = "consentium:change";
 
 /**
  * The implicit, always-on category. It never appears in

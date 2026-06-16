@@ -1,11 +1,11 @@
 # Configuration
 
-Everything consent-kit does is driven by a single `ConsentConfig` object. Only
+Everything consentium does is driven by a single `ConsentConfig` object. Only
 three fields are required; the rest is optional metadata used by the disclosure
 UI.
 
 ```ts
-import type { ConsentConfig } from "consent-kit";
+import type { ConsentConfig } from "consentium";
 ```
 
 ## Minimal config
@@ -107,7 +107,7 @@ type CookieDescriptor = {
 are pre-flagged `respectDoNotTrack`.
 
 ```ts
-import { presetCategories } from "consent-kit";
+import { presetCategories } from "consentium";
 
 categories: [
   presetCategories.analytics,

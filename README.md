@@ -1,16 +1,17 @@
-# consent-kit
+# consentium
 
 A small, framework-light cookie-consent toolkit for **React** and **Next.js**.
 Config-driven, i18n-agnostic, SSR-safe, and built with GDPR in mind — including
 **Do Not Track** and **Global Privacy Control** support.
 
-[![CI](https://github.com/ivandrenc/consent-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/ivandrenc/consent-kit/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/consentium.svg)](https://www.npmjs.com/package/consentium)
+[![CI](https://github.com/ivandrenc/consentium/actions/workflows/ci.yml/badge.svg)](https://github.com/ivandrenc/consentium/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
 ```tsx
-import { ConsentProvider, CookieBanner } from "consent-kit";
-import "consent-kit/styles.css";
+import { ConsentProvider, CookieBanner } from "consentium";
+import "consentium/styles.css";
 
 <ConsentProvider config={consentConfig}>
   {children}
@@ -23,7 +24,7 @@ import "consent-kit/styles.css";
 ## Why
 
 Most consent libraries are either heavyweight SaaS scripts or barely-styled
-checkboxes. consent-kit is the middle ground: one provider, one banner, one
+checkboxes. consentium is the middle ground: one provider, one banner, one
 stylesheet, and a tiny store you drive from your own code. You decide what each
 category gates — the kit just records the decision and tells your app about it.
 
@@ -48,27 +49,27 @@ category gates — the kit just records the decision and tells your app about it
   a session.
 
 > [!IMPORTANT]
-> consent-kit is engineering tooling, **not legal advice**. It gives you the
+> consentium is engineering tooling, **not legal advice**. It gives you the
 > mechanism for lawful consent; you are responsible for the categories you
 > declare, the copy you write, and whether your setup meets the rules in your
 > jurisdiction. See [docs/gdpr.md](./docs/gdpr.md).
 
 ## Install
 
-From GitHub (builds automatically on install):
-
 ```bash
-npm install github:ivandrenc/consent-kit
-# or pin a tag/commit:
-npm install github:ivandrenc/consent-kit#v0.1.0
+npm install consentium
 ```
 
-Requires **React 18 or 19**, and **Node 20+** to build (the package builds
-itself on install via the `prepare` script, so there is no separate build step).
+Or straight from GitHub (builds itself on install via the `prepare` script):
 
-> Distributed via GitHub. The bare name `consent-kit` is taken by an unrelated
-> package on the npm registry, so if you ever want to publish your own build,
-> rename it to a scope first (e.g. `@your-org/consent-kit`).
+```bash
+npm install github:ivandrenc/consentium
+# or pin a tag: npm install github:ivandrenc/consentium#v0.1.0
+```
+
+Requires **React 18 or 19**. The published npm package ships prebuilt, so it
+installs on any supported Node. Building from source (the GitHub install or a
+local clone) needs **Node 20+**.
 
 ## Quick start
 
@@ -76,8 +77,8 @@ itself on install via the `prepare` script, so there is no separate build step).
 
 ```ts
 // consent.config.ts
-import type { ConsentConfig } from "consent-kit";
-import { presetCategories } from "consent-kit";
+import type { ConsentConfig } from "consentium";
+import { presetCategories } from "consentium";
 
 export const consentConfig: ConsentConfig = {
   productName: "Acme",
@@ -94,8 +95,8 @@ export const consentConfig: ConsentConfig = {
 ### 2. Wrap your app and mount the banner
 
 ```tsx
-import { ConsentProvider, CookieBanner } from "consent-kit";
-import "consent-kit/styles.css";
+import { ConsentProvider, CookieBanner } from "consentium";
+import "consentium/styles.css";
 import { consentConfig } from "./consent.config";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -119,7 +120,7 @@ run before consent. Read the store and subscribe to changes:
 ```tsx
 "use client";
 import { useEffect } from "react";
-import { useConsent } from "consent-kit";
+import { useConsent } from "consentium";
 
 export function Analytics() {
   const { store } = useConsent();
@@ -143,7 +144,7 @@ Drop a settings link in your footer — withdrawing consent must be as easy as
 giving it:
 
 ```tsx
-import { CookieSettingsLink } from "consent-kit";
+import { CookieSettingsLink } from "consentium";
 
 <footer>
   <CookieSettingsLink /> {/* re-opens the banner */}
@@ -182,11 +183,11 @@ Full token list and a dark-mode example: [docs/theming.md](./docs/theming.md).
 
 ## Without React
 
-The store is framework-agnostic. Import from `consent-kit/core` to use it in
+The store is framework-agnostic. Import from `consentium/core` to use it in
 Vue, Svelte, or vanilla JS:
 
 ```ts
-import { createStore } from "consent-kit/core";
+import { createStore } from "consentium/core";
 
 const store = createStore({
   storageKey: "acme_consent",

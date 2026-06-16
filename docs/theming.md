@@ -3,7 +3,7 @@
 Import the stylesheet once, anywhere in your app:
 
 ```ts
-import "consent-kit/styles.css";
+import "consentium/styles.css";
 ```
 
 Then override any `--ck-*` custom property at a scope that contains the banner

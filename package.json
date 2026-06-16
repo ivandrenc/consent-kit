@@ -1,5 +1,5 @@
 {
-  "name": "consent-kit",
+  "name": "consentium",
   "version": "0.1.0",
   "description": "Lightweight, GDPR-minded cookie-consent toolkit for React and Next.js. Config-driven, i18n-agnostic, SSR-safe, with Do Not Track and Global Privacy Control support.",
   "keywords": [
@@ -16,13 +16,13 @@
   ],
   "license": "MIT",
   "author": "Ivan Naranjo (https://github.com/ivandrenc)",
-  "homepage": "https://github.com/ivandrenc/consent-kit#readme",
+  "homepage": "https://github.com/ivandrenc/consentium#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivandrenc/consent-kit.git"
+    "url": "git+https://github.com/ivandrenc/consentium.git"
   },
   "bugs": {
-    "url": "https://github.com/ivandrenc/consent-kit/issues"
+    "url": "https://github.com/ivandrenc/consentium/issues"
   },
   "type": "module",
   "sideEffects": [

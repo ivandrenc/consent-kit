@@ -1,4 +1,4 @@
-// Framework-agnostic core. Import from `consent-kit/core` to use the store
+// Framework-agnostic core. Import from `consentium/core` to use the store
 // without React (e.g. in a Vue/Svelte/vanilla integration).
 
 export type {

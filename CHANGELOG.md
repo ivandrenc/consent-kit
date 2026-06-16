@@ -24,10 +24,10 @@ Initial public release.
   `respectDoNotTrack`.
 - Policy versioning that re-prompts returning visitors on a bump.
 - i18n-agnostic copy system with English defaults and a `copy` override prop.
-- Themeable stylesheet (`consent-kit/styles.css`) using namespaced `--ck-*`
+- Themeable stylesheet (`consentium/styles.css`) using namespaced `--ck-*`
   custom properties.
 - `presetCategories` for analytics / marketing / functional.
-- `consent-kit/core` subpath export for non-React use.
+- `consentium/core` subpath export for non-React use.
 
-[Unreleased]: https://github.com/ivandrenc/consent-kit/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/ivandrenc/consent-kit/releases/tag/v0.1.0
+[Unreleased]: https://github.com/ivandrenc/consentium/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/ivandrenc/consentium/releases/tag/v0.1.0

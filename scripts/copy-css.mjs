@@ -1,5 +1,5 @@
 // Copies the standalone stylesheet into dist so it is published alongside the
-// compiled JS and resolvable via the `consent-kit/styles.css` export.
+// compiled JS and resolvable via the `consentium/styles.css` export.
 import { copyFileSync, mkdirSync } from "node:fs";
 
 mkdirSync("dist", { recursive: true });

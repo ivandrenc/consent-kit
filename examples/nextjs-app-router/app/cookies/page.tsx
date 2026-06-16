@@ -1,6 +1,6 @@
 "use client";
 
-import { CookieDisclosureTable, CookieSettingsLink } from "consent-kit";
+import { CookieDisclosureTable, CookieSettingsLink } from "consentium";
 
 export default function CookiesPage() {
   return (

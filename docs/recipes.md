@@ -1,6 +1,6 @@
 # Recipes: gating real scripts
 
-consent-kit records the decision; **you** decide what each category gates. The
+consentium records the decision; **you** decide what each category gates. The
 golden rule: nothing that tracks should run before the matching `hasConsent`
 returns `true`, and it should react when consent changes mid-session.
 
@@ -20,7 +20,7 @@ store.subscribe((rec) => {
 "use client";
 import { useEffect } from "react";
 import posthog from "posthog-js";
-import { useConsent } from "consent-kit";
+import { useConsent } from "consentium";
 
 export function PostHogGate() {
   const { store } = useConsent();
@@ -63,7 +63,7 @@ Load the tag only after consent, and stop on withdrawal:
 ```tsx
 "use client";
 import { useEffect } from "react";
-import { useConsent } from "consent-kit";
+import { useConsent } from "consentium";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -117,7 +117,7 @@ consent), push updates instead of loading scripts:
 ```tsx
 "use client";
 import { useEffect } from "react";
-import { useConsent } from "consent-kit";
+import { useConsent } from "consentium";
 
 export function ConsentModeBridge() {
   const { store } = useConsent();

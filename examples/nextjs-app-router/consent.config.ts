@@ -1,5 +1,5 @@
-import type { ConsentConfig } from "consent-kit";
-import { presetCategories } from "consent-kit";
+import type { ConsentConfig } from "consentium";
+import { presetCategories } from "consentium";
 
 /**
  * Example configuration. Replace the product details, processors, and cookie

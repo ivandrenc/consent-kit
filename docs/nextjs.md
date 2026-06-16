@@ -1,6 +1,6 @@
 # Next.js (App Router)
 
-consent-kit is SSR-safe and works with the App Router out of the box. A full
+consentium is SSR-safe and works with the App Router out of the box. A full
 runnable example is in [`examples/nextjs-app-router`](../examples/nextjs-app-router).
 
 ## 1. Provider in the root layout
@@ -10,7 +10,7 @@ layout. Import the stylesheet here too.
 
 ```tsx
 // app/layout.tsx
-import "consent-kit/styles.css";
+import "consentium/styles.css";
 import { Providers } from "./providers";
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
 ```tsx
 // app/providers.tsx
 "use client";
-import { ConsentProvider, CookieBanner } from "consent-kit";
+import { ConsentProvider, CookieBanner } from "consentium";
 import Link from "next/link";
 import { consentConfig } from "@/consent.config";
 
@@ -62,7 +62,7 @@ config — no hand-maintained tables.
 ```tsx
 // app/cookies/page.tsx
 "use client";
-import { CookieDisclosureTable, CookieSettingsLink } from "consent-kit";
+import { CookieDisclosureTable, CookieSettingsLink } from "consentium";
 
 export default function CookiesPage() {
   return (

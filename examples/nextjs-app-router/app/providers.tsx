@@ -1,6 +1,6 @@
 "use client";
 
-import { ConsentProvider, CookieBanner } from "consent-kit";
+import { ConsentProvider, CookieBanner } from "consentium";
 import Link from "next/link";
 import { consentConfig } from "../consent.config";
 

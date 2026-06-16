@@ -1,7 +1,7 @@
 # API reference
 
-Everything is exported from the package root (`consent-kit`). The store and
-detection helpers are also available from `consent-kit/core` (no React).
+Everything is exported from the package root (`consentium`). The store and
+detection helpers are also available from `consentium/core` (no React).
 
 ## Components
 
@@ -65,7 +65,7 @@ Reactive granted/denied for a category. Returns `true` for `"essential"`,
 
 Reactive banner status.
 
-## Store (`consent-kit/core`)
+## Store (`consentium/core`)
 
 ### `createStore(config: ConsentConfig): ConsentStore`
 
@@ -79,7 +79,7 @@ Reactive banner status.
 | `reopenBanner` | `() => void`                                    | Status → `pending`, choices kept.                       |
 | `subscribe`    | `(fn) => () => void`                            | Fires on every change; returns unsubscribe.             |
 
-## Detection helpers (`consent-kit/core`)
+## Detection helpers (`consentium/core`)
 
 | Export                            | Returns   | Notes                             |
 | --------------------------------- | --------- | --------------------------------- |
@@ -89,11 +89,11 @@ Reactive banner status.
 
 ## Constants
 
-| Export                  | Notes                                                   |
-| ----------------------- | ------------------------------------------------------- |
-| `CONSENT_CHANGE_EVENT`  | The `window` CustomEvent name (`"consent-kit:change"`). |
-| `ESSENTIAL_CATEGORY_ID` | `"essential"`.                                          |
-| `presetCategories`      | `{ functional, analytics, marketing }`.                 |
+| Export                  | Notes                                                  |
+| ----------------------- | ------------------------------------------------------ |
+| `CONSENT_CHANGE_EVENT`  | The `window` CustomEvent name (`"consentium:change"`). |
+| `ESSENTIAL_CATEGORY_ID` | `"essential"`.                                         |
+| `presetCategories`      | `{ functional, analytics, marketing }`.                |
 
 ## Copy
 

@@ -20,7 +20,7 @@ What you expected to happen.
 
 **Environment**
 
-- consent-kit version:
+- consentium version:
 - React version:
 - Framework (Next.js? version?):
 - Browser:

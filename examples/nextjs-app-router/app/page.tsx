@@ -1,11 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  useConsent,
-  useConsentCategory,
-  CookieSettingsLink,
-} from "consent-kit";
+import { useConsent, useConsentCategory, CookieSettingsLink } from "consentium";
 
 export default function HomePage() {
   const { record } = useConsent();
@@ -21,7 +17,7 @@ export default function HomePage() {
         fontFamily: "system-ui",
       }}
     >
-      <h1>consent-kit example</h1>
+      <h1>consentium example</h1>
       <p>
         On first visit the banner appears in the corner. Choose an option and it
         disappears; your choice is stored in <code>localStorage</code> and shown

@@ -1,4 +1,4 @@
-# Contributing to consent-kit
+# Contributing to consentium
 
 Thanks for your interest! This project aims to stay small, dependency-light, and
 genuinely useful. Contributions of all sizes are welcome — bug reports, docs,
@@ -7,8 +7,8 @@ tests, new recipes, and features.
 ## Getting started
 
 ```bash
-git clone https://github.com/ivandrenc/consent-kit.git
-cd consent-kit
+git clone https://github.com/ivandrenc/consentium.git
+cd consentium
 npm install        # also builds via the `prepare` script
 ```
 

@@ -1,5 +1,5 @@
 /**
- * Type definitions for consent-kit.
+ * Type definitions for consentium.
  *
  * The *core* of a config is small: `storageKey`, `policyVersion`, and
  * `categories` are all the store and banner need. Everything else

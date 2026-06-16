@@ -1,11 +1,11 @@
 # GDPR & privacy notes
 
-> **Not legal advice.** This document explains how consent-kit maps to common
+> **Not legal advice.** This document explains how consentium maps to common
 > GDPR/ePrivacy expectations so you can reason about your setup. Whether your
 > site is compliant depends on how you configure and integrate it, and on the
 > rules in your jurisdiction. When in doubt, consult a qualified advisor.
 
-## What consent-kit gives you
+## What consentium gives you
 
 | Requirement (GDPR / ePrivacy / EDPB guidance)                       | How the kit helps                                                                                                                                          |
 | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -32,7 +32,7 @@ buttons the same style via the `--ck-*` tokens or by overriding `.ck-btn-ghost`
 
 ## What is still your responsibility
 
-consent-kit is the consent **mechanism**. It cannot make these decisions for you:
+consentium is the consent **mechanism**. It cannot make these decisions for you:
 
 1. **Actually gate your scripts.** The single most important step. If you load
    analytics/marketing tags before `hasConsent()` is `true`, you are

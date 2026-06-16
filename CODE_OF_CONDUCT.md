@@ -35,7 +35,7 @@ Examples of unacceptable behavior:
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported privately to the maintainers via GitHub's
-[private vulnerability reporting](https://github.com/ivandrenc/consent-kit/security/advisories/new)
+[private vulnerability reporting](https://github.com/ivandrenc/consentium/security/advisories/new)
 or by opening a confidential report through the repository's **Security** tab.
 All complaints will be reviewed and investigated promptly and fairly, and the
 maintainers will respect the privacy and security of the reporter.
