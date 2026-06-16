@@ -1,0 +1,15 @@
+/* Minimal page styling for the example, plus a consent-kit theme override. */
+:root {
+  --ck-color-accent: #1c5b3d;
+  --ck-color-accent-hover: #2a7a55;
+}
+
+body {
+  margin: 0;
+  background: #faf9f6;
+  color: #131318;
+}
+
+a {
+  color: #1c5b3d;
+}

@@ -1,0 +1,337 @@
+/* consent-kit styles — import once: `import "consent-kit/styles.css"`.
+ *
+ * Theming: override any `--ck-*` custom property at a scope that wraps the
+ * banner (e.g. `:root` or your app shell). The defaults below are a neutral,
+ * light theme; see docs/theming.md for a dark-mode recipe. All selectors are
+ * prefixed `.ck-` and every token is namespaced `--ck-` so nothing collides
+ * with your own design tokens.
+ */
+
+:root {
+  --ck-color-paper: #ffffff;
+  --ck-color-paper-2: #f7f6f3;
+  --ck-color-paper-3: #ececea;
+  --ck-color-paper-overlay: rgba(255, 255, 255, 0.92);
+  --ck-color-rule: #e4e3df;
+  --ck-color-ink: #131318;
+  --ck-color-ink-2: #3a3a44;
+  --ck-color-ink-subtle: rgba(19, 19, 24, 0.04);
+  --ck-color-accent: #1c5b3d;
+  --ck-color-accent-ink: #f4faf6;
+  --ck-color-accent-hover: #2a7a55;
+  --ck-color-focus: #2e8a5f;
+
+  --ck-font-display: ui-serif, Georgia, serif;
+  --ck-font-body: ui-sans-serif, system-ui, sans-serif;
+  --ck-font-mono: ui-monospace, Menlo, Consolas, monospace;
+
+  --ck-space-1: 0.25rem;
+  --ck-space-2: 0.5rem;
+  --ck-space-3: 0.75rem;
+  --ck-space-4: 1rem;
+  --ck-space-6: 1.5rem;
+
+  --ck-text-xs: 0.75rem;
+  --ck-text-sm: 0.875rem;
+  --ck-text-md: 1.125rem;
+
+  --ck-radius-md: 8px;
+  --ck-radius-lg: 16px;
+  --ck-radius-pill: 999px;
+
+  --ck-shadow-lg: 0 8px 32px rgba(19, 19, 24, 0.1);
+
+  --ck-dur-short: 120ms;
+  --ck-dur-mid: 240ms;
+  --ck-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --ck-z-banner: 2147483000;
+}
+
+/* ── Banner ─────────────────────────────────────────────────────────────── */
+.ck-banner {
+  position: fixed;
+  left: var(--ck-space-6);
+  bottom: var(--ck-space-6);
+  width: min(420px, calc(100vw - var(--ck-space-6) * 2));
+  padding: var(--ck-space-6);
+  background: var(--ck-color-paper-overlay);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--ck-color-rule);
+  border-radius: var(--ck-radius-lg);
+  box-shadow: var(--ck-shadow-lg);
+  color: var(--ck-color-ink);
+  font-family: var(--ck-font-body);
+  z-index: var(--ck-z-banner);
+  animation: ck-banner-enter var(--ck-dur-mid) var(--ck-ease-out);
+}
+
+@media (max-width: 640px) {
+  .ck-banner {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: var(--ck-radius-lg) var(--ck-radius-lg) 0 0;
+  }
+}
+
+@keyframes ck-banner-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ck-banner {
+    animation: ck-banner-fade 150ms ease both;
+  }
+  @keyframes ck-banner-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.ck-headline {
+  font-family: var(--ck-font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--ck-text-md);
+  margin: 0 0 var(--ck-space-3) 0;
+  color: var(--ck-color-ink);
+}
+
+.ck-headline:focus {
+  outline: none;
+}
+
+.ck-body {
+  font-size: var(--ck-text-sm);
+  line-height: 1.55;
+  color: var(--ck-color-ink-2);
+  margin: 0 0 var(--ck-space-4) 0;
+}
+
+.ck-policy-link {
+  font-size: var(--ck-text-xs);
+  color: var(--ck-color-ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.ck-policy-link:hover {
+  border-bottom-color: var(--ck-color-ink-2);
+}
+
+.ck-policy-link:focus-visible {
+  outline: 2px solid var(--ck-color-focus);
+  outline-offset: 2px;
+}
+
+.ck-actions {
+  display: flex;
+  gap: var(--ck-space-2);
+  flex-wrap: wrap;
+  margin-top: var(--ck-space-4);
+}
+
+.ck-btn {
+  font-family: var(--ck-font-body);
+  font-size: var(--ck-text-sm);
+  font-weight: 500;
+  padding: var(--ck-space-2) var(--ck-space-4);
+  border-radius: var(--ck-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background var(--ck-dur-short) var(--ck-ease-out),
+    transform var(--ck-dur-short) var(--ck-ease-out);
+}
+
+.ck-btn:focus-visible {
+  outline: 2px solid var(--ck-color-focus);
+  outline-offset: 2px;
+}
+
+.ck-btn:active {
+  transform: translateY(1px);
+}
+
+.ck-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ck-btn-primary {
+  background: var(--ck-color-accent);
+  color: var(--ck-color-accent-ink);
+}
+
+.ck-btn-primary:hover:not(:disabled) {
+  background: var(--ck-color-accent-hover);
+}
+
+.ck-btn-ghost {
+  background: transparent;
+  color: var(--ck-color-ink);
+  border-color: var(--ck-color-rule);
+}
+
+.ck-btn-ghost:hover:not(:disabled) {
+  background: var(--ck-color-ink-subtle);
+}
+
+.ck-error {
+  font-size: var(--ck-text-xs);
+  color: var(--ck-color-ink);
+  background: var(--ck-color-paper-3);
+  padding: var(--ck-space-2) var(--ck-space-3);
+  border-radius: var(--ck-radius-md);
+  margin-top: var(--ck-space-3);
+}
+
+/* ── Customize panel ────────────────────────────────────────────────────── */
+.ck-panel {
+  margin-top: var(--ck-space-4);
+}
+
+.ck-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--ck-space-4);
+  padding: var(--ck-space-3) 0;
+  border-top: 1px solid var(--ck-color-rule);
+}
+
+.ck-row:first-of-type {
+  border-top: 0;
+}
+
+.ck-row-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ck-row-label {
+  font-size: var(--ck-text-sm);
+  font-weight: 500;
+  color: var(--ck-color-ink);
+  margin: 0 0 var(--ck-space-2) 0;
+}
+
+.ck-row-desc {
+  font-size: var(--ck-text-xs);
+  color: var(--ck-color-ink-2);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Toggle ─────────────────────────────────────────────────────────────── */
+.ck-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 36px;
+  height: 20px;
+  background: var(--ck-color-paper-3);
+  border-radius: var(--ck-radius-pill);
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: background var(--ck-dur-short) var(--ck-ease-out);
+}
+
+.ck-toggle::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: var(--ck-color-paper);
+  border-radius: 50%;
+  transition: transform var(--ck-dur-short) var(--ck-ease-out);
+}
+
+.ck-toggle:checked {
+  background: var(--ck-color-accent);
+}
+
+.ck-toggle:checked::before {
+  transform: translateX(16px);
+}
+
+.ck-toggle:focus-visible {
+  outline: 2px solid var(--ck-color-focus);
+  outline-offset: 2px;
+}
+
+.ck-toggle:disabled {
+  background: var(--ck-color-paper-3);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ── Disclosure tables ──────────────────────────────────────────────────── */
+.ck-disclosure {
+  font-family: var(--ck-font-body);
+  color: var(--ck-color-ink);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ck-space-6);
+}
+
+.ck-disclosure-heading {
+  font-family: var(--ck-font-display);
+  font-size: var(--ck-text-md);
+  margin: 0 0 var(--ck-space-3) 0;
+}
+
+.ck-disclosure-empty {
+  font-size: var(--ck-text-sm);
+  color: var(--ck-color-ink-2);
+}
+
+.ck-disclosure-scroll {
+  overflow-x: auto;
+}
+
+.ck-disclosure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--ck-text-sm);
+}
+
+.ck-disclosure-table th,
+.ck-disclosure-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--ck-space-3);
+  border-bottom: 1px solid var(--ck-color-rule);
+}
+
+.ck-disclosure-table th {
+  font-weight: 600;
+  color: var(--ck-color-ink-2);
+  white-space: nowrap;
+}
+
+.ck-disclosure-table code {
+  font-family: var(--ck-font-mono);
+  font-size: var(--ck-text-xs);
+}
+
+.ck-disclosure-list {
+  margin: 0;
+  padding-left: var(--ck-space-4);
+}
