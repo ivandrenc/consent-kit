@@ -1,6 +1,13 @@
 # Dependencies
 node_modules/
 
+# Lockfile is intentionally NOT committed. This is a library, so consumers
+# never use our lockfile (npm resolves devDeps fresh per-platform when the
+# `prepare` script builds on install). Committing a lockfile generated on one
+# OS breaks `npm ci`/`npm install` of cross-platform native binaries
+# (rollup/rolldown) on another — npm/cli#4828. Fresh resolution avoids it.
+package-lock.json
+
 # Build output
 dist/
 *.tsbuildinfo

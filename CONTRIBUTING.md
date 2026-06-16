@@ -12,6 +12,13 @@ cd consent-kit
 npm install        # also builds via the `prepare` script
 ```
 
+> **No committed lockfile.** `package-lock.json` is intentionally git-ignored.
+> A lockfile generated on one OS makes `npm` skip the cross-platform native
+> binaries (rollup/rolldown) on another ([npm/cli#4828](https://github.com/npm/cli/issues/4828)),
+> which breaks CI. Since consumers never use a library's lockfile, fresh
+> resolution via `npm install` is the reliable choice. Pin exact versions in
+> `package.json` if you need stricter reproducibility.
+
 ### Useful scripts
 
 | Command                | What it does                                 |
