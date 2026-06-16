@@ -63,8 +63,8 @@ npm install github:ivandrenc/consent-kit
 npm install github:ivandrenc/consent-kit#v0.1.0
 ```
 
-Requires **React 18 or 19**. The package builds itself on install (via the
-`prepare` script), so there is no separate build step.
+Requires **React 18 or 19**, and **Node 20+** to build (the package builds
+itself on install via the `prepare` script, so there is no separate build step).
 
 > Distributed via GitHub. The bare name `consent-kit` is taken by an unrelated
 > package on the npm registry, so if you ever want to publish your own build,

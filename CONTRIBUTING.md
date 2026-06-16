@@ -26,7 +26,8 @@ npm install        # also builds via the `prepare` script
 
 ## The bar for a PR
 
-CI runs on Node 18 and 20 and must be green. Before opening a PR, run locally:
+CI runs on Node 20 and 22 and must be green (the toolchain requires Node 20+).
+Before opening a PR, run locally:
 
 ```bash
 npm run typecheck && npm test && npm run format:check
