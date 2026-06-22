@@ -1,6 +1,6 @@
 {
   "name": "consentium",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lightweight, GDPR-minded cookie-consent toolkit for React and Next.js. Config-driven, i18n-agnostic, SSR-safe, with Do Not Track and Global Privacy Control support.",
   "keywords": [
     "cookie-consent",

@@ -6,6 +6,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-06-22
+
 ### Fixed
 
 - `CookieBanner` now returns focus to the element that opened it (e.g. the
