@@ -33,11 +33,26 @@ export function CookieBanner() {
     }
   }, [record.status, record.categories]);
 
-  // Move focus to the banner when it appears, for keyboard/screen-reader users.
+  // When the banner appears, move focus to it for keyboard/screen-reader users,
+  // remembering whatever was focused beforehand (e.g. the footer "Cookie
+  // settings" button that reopened it). On close, return focus there so keyboard
+  // users land back where they started instead of at the top of the document.
   useEffect(() => {
-    if (mounted && record.status === "pending") {
-      headlineRef.current?.focus();
-    }
+    if (!mounted || record.status !== "pending") return;
+
+    const trigger = document.activeElement as HTMLElement | null;
+    headlineRef.current?.focus();
+
+    return () => {
+      if (
+        trigger &&
+        trigger !== document.body &&
+        typeof trigger.focus === "function" &&
+        document.contains(trigger)
+      ) {
+        trigger.focus();
+      }
+    };
   }, [mounted, record.status]);
 
   if (!mounted || record.status !== "pending") return null;

@@ -9,6 +9,10 @@ Config-driven, i18n-agnostic, SSR-safe, and built with GDPR in mind — includin
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
+<p align="center">
+  <img src="./docs/assets/banner-preview.svg" alt="consentium cookie banner — the initial accept-all / reject-all / customize view, and the per-category customize panel with toggles" width="900">
+</p>
+
 ```tsx
 import { ConsentProvider, CookieBanner } from "consentium";
 import "consentium/styles.css";

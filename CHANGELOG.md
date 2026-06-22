@@ -6,6 +6,18 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- `CookieBanner` now returns focus to the element that opened it (e.g. the
+  footer `CookieSettingsLink`) when it closes, instead of stranding keyboard
+  users at the top of the document. The banner still moves focus to its headline
+  on open.
+
+### Added
+
+- README now includes a visual preview of the banner (initial view and
+  per-category customize panel).
+
 ## [0.1.0]
 
 Initial public release.

@@ -91,4 +91,31 @@ describe("CookieBanner", () => {
       screen.getByRole("region", { name: /cookie consent/i }),
     ).toBeTruthy();
   });
+
+  it("returns focus to the element that opened it when closed", () => {
+    render(<Shell />);
+    // Dismiss the initial, auto-shown banner (no meaningful trigger to restore).
+    act(() => {
+      fireEvent.click(screen.getByText("Reject all"));
+    });
+
+    // Simulate a keyboard user focusing and activating the footer link.
+    const settings = screen.getByText("Cookie settings") as HTMLButtonElement;
+    act(() => {
+      settings.focus();
+      fireEvent.click(settings);
+    });
+
+    // The reopened banner takes focus to its headline…
+    const heading = screen.getByRole("heading", {
+      name: /your privacy choices/i,
+    });
+    expect(document.activeElement).toBe(heading);
+
+    // …and closing it returns focus to the link that opened it.
+    act(() => {
+      fireEvent.click(screen.getByText("Reject all"));
+    });
+    expect(document.activeElement).toBe(settings);
+  });
 });
