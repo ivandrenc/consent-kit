@@ -13,6 +13,10 @@ Config-driven, i18n-agnostic, SSR-safe, and built with GDPR in mind — includin
   <img src="./docs/assets/banner-preview.svg" alt="consentium cookie banner — the initial accept-all / reject-all / customize view, and the per-category customize panel with toggles" width="900">
 </p>
 
+<p align="center">
+  <a href="https://stackblitz.com/github/ivandrenc/consentium/tree/main/examples/vite-demo"><strong>▶ Try the live demo on StackBlitz</strong></a>
+</p>
+
 ```tsx
 import { ConsentProvider, CookieBanner } from "consentium";
 import "consentium/styles.css";
