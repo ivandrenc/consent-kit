@@ -70,10 +70,10 @@ React is the only peer dependency; there are no runtime dependencies. Sizes
 below are the published build bundled with React externalized
 (`esbuild --minify`, then gzip):
 
-| Import                                                       | Min + gzip |
-| ------------------------------------------------------------ | ---------- |
+| Import                                                        | Min + gzip |
+| ------------------------------------------------------------- | ---------- |
 | `consentium` — full UI (provider, banner, hooks, disclosures) | **3.3 KB** |
-| `consentium/core` — headless store only, no React            | **1.1 KB** |
+| `consentium/core` — headless store only, no React             | **1.1 KB** |
 
 Tree-shakeable and side-effect-free apart from the stylesheet, so you only pay
 for what you import.
