@@ -8,6 +8,7 @@ Config-driven, i18n-agnostic, SSR-safe, and built with GDPR in mind — includin
 [![CI](https://github.com/ivandrenc/consentium/actions/workflows/ci.yml/badge.svg)](https://github.com/ivandrenc/consentium/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![minzipped size](https://img.shields.io/bundlephobia/minzip/consentium)](https://bundlephobia.com/package/consentium)
 
 <p align="center">
   <img src="./docs/assets/banner-preview.svg" alt="consentium cookie banner — the initial accept-all / reject-all / customize view, and the per-category customize panel with toggles" width="900">
@@ -52,7 +53,8 @@ category gates — the kit just records the decision and tells your app about it
   translate or reword everything. Wire it to next-intl, react-i18next, anything.
 - **Themeable with CSS variables** — every token is a namespaced `--ck-*`
   custom property; no build-time CSS-modules needed.
-- **No runtime dependencies** — just React as a peer. ~3 KB of JS, gzipped.
+- **No runtime dependencies** — just React as a peer. **3.3 KB** min+gzip for
+  the full UI, or **1.1 KB** for the headless core (see [Bundle size](#bundle-size)).
 - **Reactive** — subscribe to consent changes to start/stop scripts live within
   a session.
 
@@ -61,6 +63,20 @@ category gates — the kit just records the decision and tells your app about it
 > mechanism for lawful consent; you are responsible for the categories you
 > declare, the copy you write, and whether your setup meets the rules in your
 > jurisdiction. See [docs/gdpr.md](./docs/gdpr.md).
+
+## Bundle size
+
+React is the only peer dependency; there are no runtime dependencies. Sizes
+below are the published build bundled with React externalized
+(`esbuild --minify`, then gzip):
+
+| Import                                                       | Min + gzip |
+| ------------------------------------------------------------ | ---------- |
+| `consentium` — full UI (provider, banner, hooks, disclosures) | **3.3 KB** |
+| `consentium/core` — headless store only, no React            | **1.1 KB** |
+
+Tree-shakeable and side-effect-free apart from the stylesheet, so you only pay
+for what you import.
 
 ## Install
 

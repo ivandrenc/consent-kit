@@ -6,6 +6,15 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-06-23
+
+### Added
+
+- Runnable Vite demo under `examples/vite-demo`, with a one-click
+  "try it live" StackBlitz link in the README.
+- Documented bundle size in the README — 3.3 KB min+gzip for the full UI,
+  1.1 KB for the headless `consentium/core` — plus a minzipped-size badge.
+
 ## [0.1.1] - 2026-06-22
 
 ### Fixed
