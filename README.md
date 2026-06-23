@@ -78,6 +78,30 @@ below are the published build bundled with React externalized
 Tree-shakeable and side-effect-free apart from the stylesheet, so you only pay
 for what you import.
 
+## How it compares
+
+consentium is intentionally small: a client-side React banner plus a consent
+signal in `localStorage`, no backend and no runtime dependencies. That narrow
+scope is the point — which also means other tools are a better fit for some
+needs, and it's worth being upfront about that.
+
+- **[c15t](https://github.com/c15t/c15t)** is a full consent _platform_: an
+  optional self-hosted backend or managed cloud
+  ([consent.io](https://www.consent.io/)), server-side consent records,
+  jurisdiction detection, IAB TCF 2.3, and prebuilt script integrations. Reach
+  for it if you need an audit trail of who consented to what, you're doing
+  adtech / TCF, or you'd rather not wire integrations yourself.
+- **SaaS consent managers** (Cookiebot, Osano, CookieYes, …) give you a hosted
+  script, a dashboard, and managed scanning — at the cost of a third-party
+  request and a heavier payload. Reach for one if you want compliance handled as
+  a service rather than as code you own.
+- **consentium** fits when you want a tiny, SSR-safe banner and a consent signal
+  you own outright, nothing to host, and you're happy to decide yourself what
+  each category gates — it gives you the mechanism and you wire the scripts. It
+  does **not** do server-side consent records, jurisdiction detection, or IAB
+  TCF, and Google Consent Mode v2 is a [documented recipe](./docs/recipes.md)
+  rather than something built in.
+
 ## Install
 
 ```bash

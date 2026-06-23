@@ -6,6 +6,11 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- README "How it compares" section — an honest, neutral positioning note
+  against c15t and SaaS consent managers.
+
 ## [0.1.2] - 2026-06-23
 
 ### Added
